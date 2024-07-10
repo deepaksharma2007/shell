@@ -1,6 +1,6 @@
 MYUID=$(id -u)
 
-if [ MYUID -eq 0  ]
+if [ $MYUID -eq 0  ]
 then
         echo "you can install software "
         read -p  "Enter software name: " pack
