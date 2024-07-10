@@ -3,7 +3,7 @@ mylw()
         echo "Hello Deepak"
         echo ""
 }
-mylw
+# mylw
 
 
 # Functions with arguments 
@@ -12,7 +12,7 @@ deep()
         name=${1}
         echo "my name is ${name}"
 }
-deep raj
+# deep raj
 
 
 # Static function 
@@ -21,11 +21,7 @@ myuser()
         echo " Total user that has bash shell are:- "
         cat /etc/passwd | grep bash$ | cut -d: -f 1
 }
-myuser
-
-
-
-
+# myuser
 
 #  function with argument
 
@@ -37,3 +33,11 @@ users()
 users bash
 
 #users nologin
+
+# Check network 
+mynett()
+{
+        ping -c 1 www.google.com &> /dev/null
+        [ $? == 0 ] &&   echo "net connected..." || echo "net issue..."
+}
+mynett
