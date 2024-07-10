@@ -1,0 +1,28 @@
+#!/bin/bash
+
+MYUID=$(id -u)
+read -p  "Enter software name: " pack
+
+#Check user id (root user allowd only )
+if [ $MYUID -eq 0  ]
+then
+        echo "you can install software..."
+        if rpm -q $pack &> /dev/null
+        then
+                tput setaf 2
+                echo "$pack software already installed ...."
+                tput setaf 9
+        else
+                echo " Installing $pack software ...."
+                yum install $pack -y &> /dev/null
+                tput setaf 3
+                echo "$pack is installed successfully...."
+                tput setaf 9
+        fi
+else
+        tput setaf 1
+        echo "not allowed to install soft $pack ....."
+        tput setaf 6
+        echo "you should be root user to install $pack..."
+        tput setaf 9
+fi
