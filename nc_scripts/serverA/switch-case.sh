@@ -40,5 +40,6 @@ case $myc in
                 echo "information is storing in support.txt file... "
                 nc -l $myport > support.txt
                 ;;
-
+         *)
+                echo "Option not supported..."
 esac
